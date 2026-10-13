@@ -1,0 +1,20 @@
+@model ContactViewModel
+@{
+    ViewData["Title"] = "Contacto";
+}
+<section class="contact-layout section-wrap">
+    <div class="contact-copy"><span class="eyebrow">PORTAFOLIO / 03</span><h1>Hablemos de<br /><span class="accent">tu idea.</span></h1><p>¿Quieres conversar sobre un proyecto, compartir una idea o darme una sugerencia? Puedes escribir tu mensaje en este formulario.</p><div class="contact-note"><span>✦</span><div><strong>Siempre abierta a aprender</strong><small>Las buenas ideas comienzan con una conversación.</small></div></div></div>
+    <div class="contact-form-card">
+        <h2>Envíame un mensaje</h2>
+        @if (ViewBag.Success != null) { <div class="success-message" role="status">@ViewBag.Success</div> }
+        <form asp-action="Contact" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="ModelOnly" class="validation"></div>
+            <label asp-for="Name"></label><input asp-for="Name" placeholder="Tu nombre" /><span asp-validation-for="Name" class="validation"></span>
+            <label asp-for="Email"></label><input asp-for="Email" placeholder="nombre@correo.com" /><span asp-validation-for="Email" class="validation"></span>
+            <label asp-for="Message"></label><textarea asp-for="Message" rows="5" placeholder="Cuéntame un poco..."></textarea><span asp-validation-for="Message" class="validation"></span>
+            <button class="button button-primary submit-button" type="submit">Validar mensaje <span>↗</span></button>
+            <p class="form-hint">Formulario de demostración: aún no envía correos ni guarda los mensajes.</p>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portafolio académico de desarrollo de software, aplicaciones y bases de datos." />
+    <title>@ViewData["Title"] - Portafolio</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="topbar">
+        <a class="brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">N</span> Yaoska Nicaragua<span class="brand-dot">.</span></a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+        <nav class="nav-links" id="navLinks">
+            <a asp-controller="Home" asp-action="Index">Inicio</a>
+            <a asp-controller="Home" asp-action="Index" asp-fragment="about">Sobre mí</a>
+            <a asp-controller="Home" asp-action="Projects">Proyectos</a>
+            <a class="nav-contact" asp-controller="Home" asp-action="Contact">Contacto ↗</a>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer class="footer">
+        <span>© @DateTime.Now.Year · Portafolio académico</span>
+        <span>Aprender · Crear · Mejorar</span>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+<section class="hero section-wrap">
+    <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> PORTAFOLIO DE DESARROLLO</div>
+        <h1>Hola, soy <span class="accent">Yaoska Nicaragua.</span><br />Creo soluciones<br class="desktop-only" /> con tecnología.</h1>
+        <p class="hero-lead">Estudiante de desarrollo de software interesada en crear aplicaciones útiles, diseñar interfaces claras y trabajar con bases de datos.</p>
+        <div class="hero-actions">
+            <a class="button button-primary" asp-controller="Home" asp-action="Projects">Explorar proyectos <span>↗</span></a>
+            <a class="button button-quiet" asp-controller="Home" asp-action="Contact">Hablemos</a>
+        </div>
+        <div class="hero-tags"><span>Desarrollo web</span><span>Bases de datos</span><span>Apps móviles</span></div>
+    </div>
+    <div class="hero-art">
+        <div class="art-glow"></div>
+        <img src="~/images/hero-code.svg" alt="Ilustración de una computadora con código" />
+        <div class="floating-card"><span class="mini-icon">✦</span><div><strong>En constante aprendizaje</strong><small>Un proyecto a la vez</small></div></div>
+    </div>
+</section>
+
+<section class="about section-wrap" id="about">
+    <div class="section-heading"><span class="eyebrow">01 / SOBRE MÍ</span><h2>Tecnología con propósito.</h2></div>
+    <div class="about-grid">
+        <div><p class="large-copy">Me gusta aprender construyendo: pasar de una idea a una interfaz, conectar datos y mejorar cada detalle en el proceso.</p><p class="muted">Este portafolio reúne proyectos académicos y prototipos que forman parte de mi camino como desarrolladora. Cada proyecto es una oportunidad para practicar y seguir creciendo.</p></div>
+        <div class="skill-panel">
+            <h3>Herramientas que estoy aprendiendo</h3>
+            <div class="skill-list"><span>HTML & CSS</span><span>JavaScript</span><span>Python</span><span>SQL Server</span><span>MongoDB</span><span>Flutter</span><span>Power BI</span><span>Git & GitHub</span></div>
+        </div>
+    </div>
+</section>
+
+<section class="featured section-wrap">
+    <div class="section-heading row-heading"><div><span class="eyebrow">02 / TRABAJO SELECCIONADO</span><h2>Ideas que toman forma.</h2></div><a class="text-link" asp-controller="Home" asp-action="Projects">Ver todos los proyectos ↗</a></div>
+    <div class="project-grid">
+        <article class="project-card">
+            <img class="project-image" src="~/images/purisimo-cafe.svg" alt="Ilustración de una cafetería y una taza de café" />
+            <div class="project-content"><span class="project-type">APP MÓVIL · PROYECTO ACADÉMICO</span><h3>Purísimo Café</h3><p>Propuesta de aplicación para apoyar el control de productos, inventario y ventas de una cafetería tradicional.</p><div class="chips"><span>Flutter</span><span>UI/UX</span><span>Inventario</span></div></div>
+        </article>
+        <article class="project-card">
+            <img class="project-image" src="~/images/database.svg" alt="Ilustración de una base de datos conectada a una aplicación" />
+            <div class="project-content"><span class="project-type">DESARROLLO · BASES DE DATOS</span><h3>Sistemas de gestión</h3><p>Prácticas de modelado relacional, operaciones CRUD y organización de información para sistemas de gestión.</p><div class="chips"><span>SQL</span><span>CRUD</span><span>Modelado</span></div></div>
+        </article>
+        <article class="project-card">
+            <div class="project-image project-image-dashboard"><div class="dash-label">RESUMEN DE DATOS</div><div class="chart-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="dash-bottom"><span>Ventas</span><b>Analizar · Comprender · Mejorar</b></div></div>
+            <div class="project-content"><span class="project-type">ANÁLISIS DE DATOS</span><h3>Dashboard de ventas</h3><p>Diseño de indicadores y visualizaciones para interpretar ventas, productos y tendencias de negocio.</p><div class="chips"><span>Power BI</span><span>KPIs</span><span>Datos</span></div></div>
+        </article>
+    </div>
+</section>
+
+<section class="closing section-wrap"><div><span class="eyebrow">¿TRABAJAMOS EN ALGO?</span><h2>Todo gran proyecto<br />comienza con una idea.</h2></div><a class="button button-light" asp-controller="Home" asp-action="Contact">Contactarme ↗</a></section>
