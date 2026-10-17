@@ -14,13 +14,13 @@ steps:
       packageType: 'sdk'
       version: '8.x'
 
-  - script: dotnet restore PortfolioMVC.csproj
+  - script: dotnet restore PortafolioMVC.csproj
     displayName: 'Restaurar dependencias'
 
-  - script: dotnet build PortfolioMVC.csproj --configuration $(buildConfiguration) --no-restore
+  - script: dotnet build PortafolioMVC.csproj --configuration $(buildConfiguration) --no-restore
     displayName: 'Compilar proyecto'
 
-  - script: dotnet publish PortfolioMVC.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --no-build
+  - script: dotnet publish PortafolioMVC.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --no-build
     displayName: 'Preparar publicación'
 
   - task: PublishBuildArtifacts@1
