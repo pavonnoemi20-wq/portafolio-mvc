@@ -1,0 +1,31 @@
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  - task: UseDotNet@2
+    displayName: 'Instalar .NET 8'
+    inputs:
+      packageType: 'sdk'
+      version: '8.x'
+
+  - script: dotnet restore PortfolioMVC.csproj
+    displayName: 'Restaurar dependencias'
+
+  - script: dotnet build PortfolioMVC.csproj --configuration $(buildConfiguration) --no-restore
+    displayName: 'Compilar proyecto'
+
+  - script: dotnet publish PortfolioMVC.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory) --no-build
+    displayName: 'Preparar publicación'
+
+  - task: PublishBuildArtifacts@1
+    displayName: 'Guardar archivos publicados'
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'portafolio-mvc'
+      publishLocation: 'Container'
