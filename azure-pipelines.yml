@@ -29,3 +29,13 @@ steps:
       PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       ArtifactName: 'portafolio-mvc'
       publishLocation: 'Container'
+
+  - task: AzureRmWebAppDeployment@5
+    displayName: 'Publicar en Azure App Service'
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'Azure for Students(5138ed01-9a92-4ab5-a7ae-aead36db656b)'
+      appType: 'webAppLinux'
+      WebAppName: 'portafolio-nohe-mvc'
+      packageForLinux: '$(Build.ArtifactStagingDirectory)'
+      DeploymentTypeLinux: 'oneDeploy'
